@@ -29,6 +29,6 @@ This project was created as a portfolio/demo project to demonstrate my frontend 
 
 ## Author
 
-**Lumie / Yruu**
+**Lumie**
 
 GitHub: [@yruu01](https://github.com/yruu01)
