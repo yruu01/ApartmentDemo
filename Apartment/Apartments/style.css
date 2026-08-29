@@ -1,0 +1,1705 @@
+/* =========================================================
+   MIRALUNA'S APARTELLE — UI REDESIGN
+   Replace your old style.css with this
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f8f6f1;
+    --surface: #ffffff;
+    --surface-soft: #f1ede5;
+
+    --text: #24231f;
+    --text-soft: #747168;
+
+    --dark: #171714;
+    --dark-soft: #24231f;
+
+    --accent: #b18a4b;
+    --accent-dark: #8d6934;
+    --accent-light: #dcc69d;
+
+    --border: rgba(30, 28, 24, 0.1);
+
+    --shadow-sm: 0 8px 30px rgba(22, 20, 16, 0.06);
+    --shadow-md: 0 18px 45px rgba(22, 20, 16, 0.12);
+    --shadow-lg: 0 30px 70px rgba(22, 20, 16, 0.18);
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 26px;
+
+    --transition: 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(20, 20, 17, 0.94);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+nav {
+    width: min(1400px, 100%);
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+}
+
+nav h2 {
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+}
+
+nav h2::after {
+    content: ".";
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+nav li {
+    display: flex;
+}
+
+nav a {
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    text-decoration: none;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color var(--transition),
+        background var(--transition);
+}
+
+nav a:hover {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   HOMEPAGE HERO
+   ========================================================= */
+
+.hero {
+    min-height: 82vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12, 12, 10, 0.4),
+            rgba(12, 12, 10, 0.75)
+        ),
+        url("images/penthouse.jpg") center / cover no-repeat;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "MIRALUNA'S APARTELLE";
+
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 700;
+
+    color: var(--accent-light);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(48px, 7vw, 86px);
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    max-width: 900px;
+
+    margin-bottom: 22px;
+
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+    max-width: 620px;
+
+    margin-bottom: 35px;
+
+    font-size: 19px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.hero a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 30px;
+
+    color: #161511;
+
+    background: var(--accent-light);
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+    font-size: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.hero a:hover {
+    transform: translateY(-3px);
+
+    background: white;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   HOMEPAGE APARTMENTS
+   ========================================================= */
+
+#apartments {
+    width: min(1400px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+
+    padding: 100px 7%;
+}
+
+.apartment-card {
+    position: relative;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+    padding: 0 0 26px;
+
+    text-align: left;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.apartment-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+.apartment-card img {
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    margin-bottom: 24px;
+
+    transition: transform 0.55s ease;
+}
+
+.apartment-card:hover img {
+    transform: scale(1.045);
+}
+
+.apartment-card h2,
+.apartment-card p,
+.apartment-card a {
+    margin-left: 26px;
+    margin-right: 26px;
+}
+
+.apartment-card h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 29px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.apartment-card p {
+    color: var(--text-soft);
+
+    font-size: 15px;
+
+    margin-bottom: 7px;
+}
+
+.apartment-card p:nth-of-type(2) {
+    color: var(--accent-dark);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+
+.apartment-card a {
+    display: inline-flex;
+
+    padding: 11px 21px;
+
+    background: var(--dark);
+    color: white;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.apartment-card a:hover {
+    background: var(--accent-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ROOM PAGE WRAPPER
+   ========================================================= */
+
+#studio,
+#one-bedroom,
+#two-bedroom,
+#penthouse {
+    width: min(1350px, 100%);
+
+    margin: auto;
+
+    padding: 80px 7% 110px;
+}
+
+
+/* =========================================================
+   ROOM HEADERS
+   ========================================================= */
+
+.studio-header,
+.one-bedroom-header,
+.two-bedroom-header,
+.penthouse-header {
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.studio-header::before,
+.one-bedroom-header::before,
+.two-bedroom-header::before,
+.penthouse-header::before {
+    content: "MIRALUNA'S APARTELLE";
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--accent-dark);
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.studio-header h1,
+.one-bedroom-header h1,
+.two-bedroom-header h1,
+.penthouse-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(40px, 5vw, 64px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.studio-header p,
+.one-bedroom-header p,
+.two-bedroom-header p,
+.penthouse-header p {
+    color: var(--text-soft);
+
+    font-size: 17px;
+
+    max-width: 660px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   ROOM GALLERIES
+   ========================================================= */
+
+.studio-gallery,
+.one-bedroom-gallery,
+.two-bedroom-gallery,
+.penthouse-gallery {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    grid-template-rows: 420px;
+
+    gap: 14px;
+
+    margin-bottom: 35px;
+}
+
+.studio-gallery img,
+.one-bedroom-gallery img,
+.two-bedroom-gallery img,
+.penthouse-gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.studio-gallery img:hover,
+.one-bedroom-gallery img:hover,
+.two-bedroom-gallery img:hover,
+.penthouse-gallery img:hover {
+    transform: translateY(-4px);
+
+    filter: brightness(1.04);
+}
+
+
+/* =========================================================
+   ROOM INFO
+   ========================================================= */
+
+.studio-info,
+.one-bedroom-info,
+.two-bedroom-info,
+.penthouse-info {
+    position: relative;
+
+    padding: 38px 42px;
+
+    margin-bottom: 28px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.studio-info::before,
+.one-bedroom-info::before,
+.two-bedroom-info::before,
+.penthouse-info::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 28px;
+    bottom: 28px;
+
+    width: 4px;
+
+    background: var(--accent);
+
+    border-radius: 0 5px 5px 0;
+}
+
+.studio-info h2,
+.one-bedroom-info h2,
+.two-bedroom-info h2,
+.penthouse-info h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--accent-dark);
+
+    font-size: 34px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+}
+
+.studio-info p,
+.one-bedroom-info p,
+.two-bedroom-info p,
+.penthouse-info p {
+    max-width: 900px;
+
+    color: var(--text-soft);
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   APARTMENT DETAILS
+   ========================================================= */
+
+.studio-details,
+.one-bedroom-details,
+.two-bedroom-details,
+.penthouse-details {
+    padding: 38px;
+
+    margin-bottom: 28px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+}
+
+.studio-details h2,
+.one-bedroom-details h2,
+.two-bedroom-details h2,
+.penthouse-details h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.detail-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.detail-list p {
+    padding: 18px 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    color: var(--text-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.detail-list p:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-list strong {
+    color: var(--text);
+
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   AMENITIES
+   ========================================================= */
+
+.studio-amenities,
+.one-bedroom-amenities,
+.two-bedroom-amenities,
+.penthouse-amenities {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171714,
+            #28251f
+        );
+
+    color: white;
+
+    padding: 45px;
+
+    border-radius: var(--radius-lg);
+
+    margin-bottom: 28px;
+
+    box-shadow: var(--shadow-md);
+}
+
+.studio-amenities::after,
+.one-bedroom-amenities::after,
+.two-bedroom-amenities::after,
+.penthouse-amenities::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(177, 138, 75, 0.14);
+
+    filter: blur(5px);
+}
+
+.studio-amenities h2,
+.one-bedroom-amenities h2,
+.two-bedroom-amenities h2,
+.penthouse-amenities h2 {
+    position: relative;
+    z-index: 2;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.studio-amenities ul,
+.one-bedroom-amenities ul,
+.two-bedroom-amenities ul,
+.penthouse-amenities ul {
+    position: relative;
+
+    z-index: 2;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 13px 30px;
+}
+
+.studio-amenities li,
+.one-bedroom-amenities li,
+.two-bedroom-amenities li,
+.penthouse-amenities li {
+    position: relative;
+
+    padding-left: 25px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+}
+
+.studio-amenities li::before,
+.one-bedroom-amenities li::before,
+.two-bedroom-amenities li::before,
+.penthouse-amenities li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--accent-light);
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ROOM CONTACT CTA
+   ========================================================= */
+
+.studio-contact,
+.one-bedroom-contact,
+.two-bedroom-contact,
+.penthouse-contact {
+    text-align: center;
+
+    padding: 65px 30px;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee7da,
+            #f9f6ef
+        );
+
+    border: 1px solid var(--border);
+}
+
+.studio-contact h2,
+.one-bedroom-contact h2,
+.two-bedroom-contact h2,
+.penthouse-contact h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(30px, 4vw, 43px);
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.studio-contact p,
+.one-bedroom-contact p,
+.two-bedroom-contact p,
+.penthouse-contact p {
+    color: var(--text-soft);
+
+    margin-bottom: 25px;
+}
+
+.studio-contact a,
+.one-bedroom-contact a,
+.two-bedroom-contact a,
+.penthouse-contact a {
+    display: inline-flex;
+
+    padding: 13px 27px;
+
+    background: var(--dark);
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.studio-contact a:hover,
+.one-bedroom-contact a:hover,
+.two-bedroom-contact a:hover,
+.penthouse-contact a:hover {
+    transform: translateY(-3px);
+
+    background: var(--accent-dark);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    padding: 85px 7% 110px;
+}
+
+.about-header {
+    max-width: 700px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.about-header::before {
+    content: "OUR STORY";
+
+    display: block;
+
+    color: var(--accent-dark);
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.about-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.about-header p {
+    color: var(--text-soft);
+
+    font-size: 18px;
+}
+
+.about-content {
+    max-width: 850px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+}
+
+.about-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 36px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: var(--text-soft);
+
+    font-size: 16px;
+
+    margin-bottom: 17px;
+}
+
+.about-features {
+    margin-bottom: 65px;
+}
+
+.about-features h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 37px;
+    font-weight: 500;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.feature-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.feature {
+    position: relative;
+
+    padding: 34px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+}
+
+.feature h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: var(--text-soft);
+
+    font-size: 15px;
+}
+
+.about-action {
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 75px 30px;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #171714,
+            #2b2923
+        );
+
+    box-shadow: var(--shadow-md);
+}
+
+.about-action h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 45px);
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.about-action p {
+    color: rgba(255, 255, 255, 0.67);
+
+    margin-bottom: 25px;
+}
+
+.about-action a {
+    display: inline-flex;
+
+    padding: 13px 27px;
+
+    color: var(--dark);
+
+    background: var(--accent-light);
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+.about-action a:hover {
+    transform: translateY(-3px);
+
+    background: white;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    padding: 85px 7% 110px;
+}
+
+.contact-header {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.contact-header::before {
+    content: "GET IN TOUCH";
+
+    display: block;
+
+    color: var(--accent-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.contact-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(43px, 6vw, 65px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+}
+
+.contact-header p {
+    color: var(--text-soft);
+
+    font-size: 17px;
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 22px;
+}
+
+.contact-info {
+    padding: 43px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181815,
+            #292720
+        );
+
+    color: white;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+.contact-info h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 24px;
+
+    color: rgba(255, 255, 255, 0.67);
+}
+
+.contact-info strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--accent-light);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.3px;
+}
+
+.contact-form {
+    padding: 43px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 31px;
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 7px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    margin-bottom: 19px;
+
+    color: var(--text);
+
+    background: #fbfaf7;
+
+    border: 1px solid rgba(30, 28, 24, 0.13);
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa69d;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    background: white;
+
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 4px rgba(177, 138, 75, 0.12);
+}
+
+.contact-form textarea {
+    resize: vertical;
+
+    min-height: 150px;
+}
+
+.contact-form button {
+    align-self: flex-start;
+
+    border: none;
+
+    padding: 14px 28px;
+
+    background: var(--dark);
+    color: white;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+
+    background: var(--accent-dark);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   SMALL ANIMATION
+   ========================================================= */
+
+.hero h1,
+.hero p,
+.hero a,
+.apartment-card,
+.studio-header,
+.one-bedroom-header,
+.two-bedroom-header,
+.penthouse-header {
+    animation: fadeUp 0.65s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    nav {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    nav ul {
+        gap: 2px;
+    }
+
+    nav a {
+        padding: 8px 9px;
+
+        font-size: 13px;
+    }
+
+    #apartments {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .studio-gallery,
+    .one-bedroom-gallery,
+    .two-bedroom-gallery,
+    .penthouse-gallery {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: 380px 260px;
+    }
+
+    .studio-gallery img:first-child,
+    .one-bedroom-gallery img:first-child,
+    .two-bedroom-gallery img:first-child,
+    .penthouse-gallery img:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: 13px;
+
+        padding: 16px 4%;
+    }
+
+    nav h2 {
+        font-size: 23px;
+    }
+
+    nav ul {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+
+        gap: 4px;
+
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav li {
+        flex-shrink: 0;
+    }
+
+    nav a {
+        white-space: nowrap;
+
+        background: rgba(255, 255, 255, 0.05);
+
+        padding: 8px 12px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 72vh;
+
+        padding: 90px 22px;
+    }
+
+    .hero::before {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    /* HOME CARDS */
+
+    #apartments {
+        grid-template-columns: 1fr;
+
+        padding: 65px 5%;
+
+        gap: 22px;
+    }
+
+    .apartment-card img {
+        height: 270px;
+    }
+
+
+    /* ROOM PAGES */
+
+    #studio,
+    #one-bedroom,
+    #two-bedroom,
+    #penthouse {
+        padding: 60px 5% 80px;
+    }
+
+    .studio-header,
+    .one-bedroom-header,
+    .two-bedroom-header,
+    .penthouse-header {
+        margin-bottom: 38px;
+    }
+
+    .studio-gallery,
+    .one-bedroom-gallery,
+    .two-bedroom-gallery,
+    .penthouse-gallery {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: none;
+    }
+
+    .studio-gallery img,
+    .one-bedroom-gallery img,
+    .two-bedroom-gallery img,
+    .penthouse-gallery img {
+        height: 270px;
+    }
+
+    .studio-gallery img:first-child,
+    .one-bedroom-gallery img:first-child,
+    .two-bedroom-gallery img:first-child,
+    .penthouse-gallery img:first-child {
+        grid-column: auto;
+    }
+
+    .studio-info,
+    .one-bedroom-info,
+    .two-bedroom-info,
+    .penthouse-info {
+        padding: 30px 26px;
+    }
+
+    .studio-details,
+    .one-bedroom-details,
+    .two-bedroom-details,
+    .penthouse-details {
+        padding: 28px 22px;
+    }
+
+    .detail-list {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-amenities,
+    .one-bedroom-amenities,
+    .two-bedroom-amenities,
+    .penthouse-amenities {
+        padding: 35px 27px;
+    }
+
+    .studio-amenities ul,
+    .one-bedroom-amenities ul,
+    .two-bedroom-amenities ul,
+    .penthouse-amenities ul {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT */
+
+    .about-page {
+        padding: 60px 5% 80px;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        padding: 27px;
+    }
+
+    .about-action {
+        padding: 55px 25px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-page {
+        padding: 60px 5% 80px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 31px 25px;
+    }
+
+    .contact-form button {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 68vh;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero a {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+    .apartment-card {
+        border-radius: 20px;
+    }
+
+    .apartment-card img {
+        height: 230px;
+    }
+
+    .apartment-card h2 {
+        font-size: 25px;
+    }
+
+    .studio-gallery img,
+    .one-bedroom-gallery img,
+    .two-bedroom-gallery img,
+    .penthouse-gallery img {
+        height: 230px;
+    }
+
+    .studio-info h2,
+    .one-bedroom-info h2,
+    .two-bedroom-info h2,
+    .penthouse-info h2 {
+        font-size: 28px;
+    }
+
+    .studio-contact,
+    .one-bedroom-contact,
+    .two-bedroom-contact,
+    .penthouse-contact {
+        padding: 48px 22px;
+    }
+}
+
+/* =========================================================
+   MOBILE HAMBURGER MENU
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    padding: 5px 8px;
+
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.08);
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    nav {
+        position: relative;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 16px 5%;
+    }
+
+    nav h2 {
+        text-align: left;
+        font-size: 21px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 0 5%;
+
+        background: rgba(20, 20, 17, 0.98);
+
+        backdrop-filter: blur(18px);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition:
+            max-height 0.4s ease,
+            opacity 0.25s ease,
+            padding 0.4s ease;
+    }
+
+    nav.open ul {
+        max-height: 500px;
+
+        opacity: 1;
+
+        pointer-events: auto;
+
+        padding-top: 12px;
+        padding-bottom: 18px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul a {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 14px;
+
+        border-radius: 10px;
+
+        color: rgba(255, 255, 255, 0.78);
+    }
+
+    nav ul a:hover {
+        background: rgba(255, 255, 255, 0.08);
+
+        color: white;
+    }
+}

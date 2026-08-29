@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Apartments</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <h2>Demo Apartelle</h2>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="1bedroom.html">1 Bedroom</a></li>
+                <li><a href="2bedroom.html">2 Bedroom</a></li>
+                <li><a href="penthouse.html">Penthouse</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="contact-page">
+
+            <div class="contact-header">
+
+                <h1>Contact Us</h1>
+
+                <p>
+                    Interested in one of our apartments?
+                    Send us an inquiry and schedule a viewing.
+                </p>
+
+            </div>
+
+
+            <div class="contact-container">
+
+                <div class="contact-info">
+
+                    <h2>Get in Touch</h2>
+
+                    <p>
+                        Have questions about availability,
+                        pricing, or apartment features?
+                        Contact us and we'll be happy to help.
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        DemoBy@Cyrus.com
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        +63 993 996 5671
+                    </p>
+
+                    <p>
+                        <strong>Office Hours:</strong>
+                        Monday - Saturday, 9:00 AM - 6:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="contact-form">
+
+                    <h2>Send an Inquiry</h2>
+
+                    <form>
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+
+                        <label for="apartment-type">
+                            Apartment Type
+                        </label>
+
+                        <select id="apartment-type" name="apartment-type">
+
+                            <option value="">
+                                Select an apartment
+                            </option>
+
+                            <option value="studio">
+                                Studio Apartment
+                            </option>
+
+                            <option value="one-bedroom">
+                                One Bedroom Apartment
+                            </option>
+
+                            <option value="two-bedroom">
+                                Two Bedroom Apartment
+                            </option>
+
+                            <option value="penthouse">
+                                Penthouse
+                            </option>
+
+                        </select>
+
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                            required></textarea>
+
+
+                        <button type="submit">
+                            Send Inquiry
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const nav = document.querySelector("nav");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelectorAll("nav ul a");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+
+            menuToggle.textContent =
+                nav.classList.contains("open") ? "✕" : "☰";
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("open");
+                menuToggle.textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartments</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <h2>Demo Apartelle</h2>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="1bedroom.html">1 Bedroom</a></li>
+                <li><a href="2bedroom.html">2 Bedroom</a></li>
+                <li><a href="penthouse.html">Penthouse</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Find Your Next Home</h1>
+            <p>Comfortable apartments made for modern living.</p>
+            <a href="#apartments">View Apartments</a>
+        </section>
+
+        <section id="apartments">
+
+            <div class="apartment-card">
+                <img src="images/studio.jpg" alt="Studio Apartment">
+
+                <h2>Studio Apartment</h2>
+                <p>Perfect for one person or a couple.</p>
+                <p>₱7,000 / month</p>
+                <a href="studio.html">View Details</a>
+            </div>
+
+
+            <div class="apartment-card">
+                <img src="images/1bedroom.jpg" alt="1 Bedroom Apartment">
+
+                <h2>1 Bedroom Apartment</h2>
+                <p>Perfect for a small family.</p>
+                <p>₱12,000 / month</p>
+                <a href="1bedroom.html">View Details</a>
+            </div>
+
+
+            <div class="apartment-card">
+                <img src="images/2bedroom.jpg" alt="2 Bedroom Apartment">
+
+                <h2>2 Bedroom Apartment</h2>
+                <p>Perfect for a larger family.</p>
+                <p>₱20,000 / month</p>
+                <a href="2bedroom.html">View Details</a>
+            </div>
+
+
+            <div class="apartment-card">
+                <img src="images/penthouse.jpg" alt="Penthouse">
+
+                <h2>Penthouse</h2>
+                <p>Experience luxury living.</p>
+                <p>₱40,000 / month</p>
+                <a href="penthouse.html">View Details</a>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <script>
+        const nav = document.querySelector("nav");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelectorAll("nav ul a");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+
+            menuToggle.textContent =
+                nav.classList.contains("open") ? "✕" : "☰";
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("open");
+                menuToggle.textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

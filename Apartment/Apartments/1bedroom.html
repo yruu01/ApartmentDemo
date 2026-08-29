@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>one-bedroom Apartment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+
+            <h2>Demo Apartelle</h2>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="studio.html">Studio</a></li>
+                <li><a href="1bedroom.html">1 Bedroom</a></li>
+                <li><a href="2bedroom.html">2 Bedroom</a></li>
+                <li><a href="penthouse.html">Penthouse</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section id="one-bedroom">
+
+            <div class="one-bedroom-header">
+
+                <h1>one-bedroom Apartment</h1>
+
+                <p>
+                    A spacious one-bedroom apartment with a separate bedroom,
+                    comfortable living area, and modern kitchen.
+                    Ideal for couples or small families.
+                </p>
+
+            </div>
+
+
+            <div class="one-bedroom-gallery">
+
+                <img src="images/1bedroom1.jpg" alt="1bedroom Apartment View 1">
+
+                <img src="images/1bedroom2.jpg" alt="1bedroom Apartment View 2">
+
+                <img src="images/1bedroom3.jpg" alt="1bedroom Apartment View 3">
+
+            </div>
+
+
+            <div class="one-bedroom-info">
+
+                <h2>₱12,000 / month</h2>
+
+                <p>
+
+                </p>
+
+                <p>
+                    The apartment features an open living area,
+                    private bathroom, kitchen space, and plenty
+                    of natural light.
+                </p>
+
+            </div>
+
+
+            <div class="one-bedroom-details">
+
+                <h2>Apartment Details</h2>
+
+                <div class="detail-list">
+
+                    <p><strong>Type:</strong>One Bedroom Apartment</p>
+
+                    <p><strong>Size:</strong> 50 m²</p>
+
+                    <p><strong>Bathroom:</strong> 1</p>
+
+                    <p><strong>Maximum Occupants:</strong> 4</p>
+
+                    <p><strong>Monthly Rent:</strong> ₱12,000</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="one-bedroom-amenities">
+
+                <h2>Amenities</h2>
+
+                <ul>
+                    <li>Wi-Fi Ready</li>
+                    <li>Hot/Cold Shower</li>
+                    <li>Air Conditioning</li>
+                    <li>Wide dinning table</li>
+                    <li>Private Bathrooms</li>
+                    <li>Wider Kitchen Area</li>
+                    <li>Built-in Storage</li>
+                    <li>24/7 Building Security</li>
+                </ul>
+
+            </div>
+
+
+            <div class="one-bedroom-contact">
+
+                <h2>Interested in this apartment?</h2>
+
+                <p>
+                    Contact us to ask questions or schedule
+                    a viewing.
+                </p>
+
+                <a href="contact.html">
+                    Inquire About This Apartment
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const nav = document.querySelector("nav");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelectorAll("nav ul a");
+
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+
+            menuToggle.textContent =
+                nav.classList.contains("open") ? "✕" : "☰";
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("open");
+                menuToggle.textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
