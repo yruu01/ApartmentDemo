@@ -1,172 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>About | Apartments</title>
-
+    <title>About | Demo Apartelle</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
-
 <body>
 
     <header>
         <nav>
-
-            <h2>Demo Apartelle</h2>
-
+            <h2>
+                <img src="logo.svg" alt="Demo Apartelle" width="246" height="40">
+            </h2>
             <button class="menu-toggle" aria-label="Open navigation">
                 ☰
             </button>
-
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="studio.html">Studio</a></li>
                 <li><a href="1bedroom.html">1 Bedroom</a></li>
                 <li><a href="2bedroom.html">2 Bedroom</a></li>
                 <li><a href="penthouse.html">Penthouse</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" aria-current="page">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-
         </nav>
     </header>
-
 
     <main>
 
         <section class="about-page">
 
             <div class="about-header">
-
                 <h1>About Our Apartments</h1>
-
                 <p>
                     Comfortable, modern, and convenient homes
                     designed for everyday living.
                 </p>
-
             </div>
 
-
             <div class="about-content">
-
                 <h2>Find a Place That Feels Like Home</h2>
-
                 <p>
                     Our apartments are designed to provide a comfortable
                     and modern living experience for individuals,
                     couples, and families.
                 </p>
-
                 <p>
                     Whether you are looking for a simple studio,
                     a spacious one-bedroom apartment, a larger
                     two-bedroom home, or a luxury penthouse,
                     we offer different options to match your lifestyle.
                 </p>
-
                 <p>
                     Each apartment provides practical living spaces,
                     modern amenities, and easy access to everything
                     you need for everyday life.
                 </p>
-
             </div>
 
-
             <div class="about-features">
-
                 <h2>Why Choose Us?</h2>
 
                 <div class="feature-list">
-
                     <div class="feature">
                         <h3>Modern Living</h3>
-
                         <p>
                             Clean and comfortable apartments designed
                             with modern living in mind.
                         </p>
                     </div>
-
-
                     <div class="feature">
                         <h3>24/7 Security</h3>
-
                         <p>
                             Building security helps provide residents
                             with a safe and comfortable environment.
                         </p>
                     </div>
-
-
                     <div class="feature">
                         <h3>Multiple Apartment Types</h3>
-
                         <p>
                             Choose from studio, one-bedroom,
                             two-bedroom, and penthouse apartments.
                         </p>
                     </div>
-
-
                     <div class="feature">
                         <h3>Convenient Location</h3>
-
                         <p>
                             Enjoy convenient access to shops,
                             transportation, restaurants, and
                             other everyday necessities.
                         </p>
                     </div>
-
                 </div>
-
             </div>
 
-
             <div class="about-action">
-
                 <h2>Ready to Find Your Next Home?</h2>
-
                 <p>
                     Explore our available apartments and find
                     the one that fits you best.
                 </p>
-
                 <a href="index.html#apartments">
                     View Apartments
                 </a>
-
             </div>
-
         </section>
-
     </main>
 
-    <script>
-        const nav = document.querySelector("nav");
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelectorAll("nav ul a");
-
-        menuToggle.addEventListener("click", () => {
-            nav.classList.toggle("open");
-
-            menuToggle.textContent =
-                nav.classList.contains("open") ? "✕" : "☰";
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                nav.classList.remove("open");
-                menuToggle.textContent = "☰";
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>

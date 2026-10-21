@@ -1,111 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Studio Apartment</title>
-
+    <title>Studio Apartment | Demo Apartelle</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
-
 <body>
 
     <header>
         <nav>
-
-            <h2>Demo Apartelle</h2>
-
+            <h2>
+                <img src="logo.svg" alt="Demo Apartelle" width="246" height="40">
+            </h2>
             <button class="menu-toggle" aria-label="Open navigation">
                 ☰
             </button>
-
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="studio.html">Studio</a></li>
+                <li><a href="studio.html" aria-current="page">Studio</a></li>
                 <li><a href="1bedroom.html">1 Bedroom</a></li>
                 <li><a href="2bedroom.html">2 Bedroom</a></li>
                 <li><a href="penthouse.html">Penthouse</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-
         </nav>
     </header>
-
 
     <main>
 
         <section id="studio">
 
             <div class="studio-header">
-
                 <h1>Studio Apartment</h1>
-
                 <p>
                     A comfortable and modern apartment designed
                     for simple and convenient living.
                 </p>
-
             </div>
-
 
             <div class="studio-gallery">
-
                 <img src="images/studio1.jpg" alt="Studio Apartment View 1">
-
                 <img src="images/studio2.jpg" alt="Studio Apartment View 2">
-
                 <img src="images/studio3.jpg" alt="Studio Apartment View 3">
-
             </div>
 
-
             <div class="studio-info">
-
                 <h2>₱7,000 / month</h2>
-
                 <p>
                     This modern studio apartment is perfect for
                     one person or a couple looking for a comfortable
                     and practical place to live.
                 </p>
-
                 <p>
                     The apartment features an open living area,
                     private bathroom, kitchen space, and plenty
                     of natural light.
                 </p>
-
             </div>
 
-
             <div class="studio-details">
-
                 <h2>Apartment Details</h2>
 
                 <div class="detail-list">
-
                     <p><strong>Type:</strong> Studio Apartment</p>
-
                     <p><strong>Size:</strong> 30 m²</p>
-
                     <p><strong>Bathroom:</strong> 1</p>
-
                     <p><strong>Maximum Occupants:</strong> 2</p>
-
                     <p><strong>Monthly Rent:</strong> ₱7,000</p>
-
                 </div>
-
             </div>
 
-
             <div class="studio-amenities">
-
                 <h2>Amenities</h2>
-
                 <ul>
                     <li>Wi-Fi Ready</li>
                     <li>Air Conditioning</li>
@@ -114,49 +83,21 @@
                     <li>Built-in Storage</li>
                     <li>24/7 Building Security</li>
                 </ul>
-
             </div>
 
-
             <div class="studio-contact">
-
                 <h2>Interested in this apartment?</h2>
-
                 <p>
                     Contact us to ask questions or schedule
                     a viewing.
                 </p>
-
                 <a href="contact.html">
                     Inquire About This Apartment
                 </a>
-
             </div>
-
         </section>
-
     </main>
 
-    <script>
-        const nav = document.querySelector("nav");
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelectorAll("nav ul a");
-
-        menuToggle.addEventListener("click", () => {
-            nav.classList.toggle("open");
-
-            menuToggle.textContent =
-                nav.classList.contains("open") ? "✕" : "☰";
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                nav.classList.remove("open");
-                menuToggle.textContent = "☰";
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
